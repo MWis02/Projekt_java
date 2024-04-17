@@ -1,0 +1,15 @@
+Wybranie danych:
+
+SELECT dane.nazwa, skladniki.skladniki, przygotownie.przygotowanie
+FROM dane
+JOIN przygotownie ON przygotownie.id = dane.id
+JOIN skladniki ON skladniki.id = dane.id
+WHERE dane.id = 1;
+
+Dodanie danych:
+
+INSERT INTO `dane` (`nazwa`) VALUES ('nazwa');
+
+INSERT INTO `skladniki`(`id`, `skladniki`) VALUES (wartosc_id,'skladniki');
+
+INSERT INTO `przygotownie`(`id`, `przygotowanie`) VALUES (wartosc_id,'sposob przygotowania');
