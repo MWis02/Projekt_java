@@ -11,6 +11,7 @@ public abstract class GUI {
     static Przepisy przepisy = new Przepisy();
     static Lista lista = new Lista();
     public static void wyswietlGUI(){
+        //Utworzenie okna
         JFrame frame = new JFrame("Moja aplikacja");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -39,44 +40,44 @@ public abstract class GUI {
 
         //Przyciski do przepisów wyświetlenie
         frame.getContentPane().add(buttonP1);
-        buttonP1.addActionListener(e -> {
+        buttonP1.addActionListener(e -> {//wyświetlenie przepisu
             przepisy.wyswietl("wyswietl");
             frame.setVisible(false);
         });
         frame.getContentPane().add(buttonP2);
-        buttonP2.addActionListener(e -> {
+        buttonP2.addActionListener(e -> {//dodanie przepisu
             przepisy.dodaj();
             frame.setVisible(false);
             });
         frame.getContentPane().add(buttonP3);
-        buttonP3.addActionListener(e -> {
+        buttonP3.addActionListener(e -> {//usunięcie przepisu
             przepisy.wyswietl("usun");
             frame.setVisible(false);
         });
         frame.getContentPane().add(buttonP4);
-        buttonP4.addActionListener(e -> {
+        buttonP4.addActionListener(e -> {//zmiana przepisu
             przepisy.wyswietl("zmien");
             frame.setVisible(false);
         });
 
         //Przyciski do przepisów wyświetlenie
         frame.getContentPane().add(buttonL1);
-        buttonL1.addActionListener(e -> {
+        buttonL1.addActionListener(e -> {//wyświetlenie listy
             lista.wyswietl("wyswietl");
             frame.setVisible(false);
         });
         frame.getContentPane().add(buttonL2);
-        buttonL2.addActionListener(e -> {
+        buttonL2.addActionListener(e -> {//dodanie listy
             lista.dodaj();
             frame.setVisible(false);
         });
         frame.getContentPane().add(buttonL3);
-        buttonL3.addActionListener(e -> {
+        buttonL3.addActionListener(e -> {//usunięcie listy
             lista.wyswietl("usun");
             frame.setVisible(false);
         });
         frame.getContentPane().add(buttonL4);
-        buttonL4.addActionListener(e -> {
+        buttonL4.addActionListener(e -> {//zmiana listy
             lista.wyswietl("zmien");
             frame.setVisible(false);
         });

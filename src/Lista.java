@@ -11,6 +11,7 @@ public class Lista extends GUI{
     private List<String> importowaneSkladniki;
     private JTextArea trescL;
     public Lista(){
+        //konstruktor
         this.importowaneSkladniki = new ArrayList<>();
     }
     public void wyswietl(String przycisk){
@@ -18,17 +19,20 @@ public class Lista extends GUI{
         ArrayList<String> nazwyPrzepisow = MySql.selectN();
 
         switch (przycisk) {
+            //okno z listą list
             case "wyswietl" -> {
+                //okno z listą list
                 JFrame frameL = new JFrame("Listy");
                 frameL.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
+                //panel z przyciskami
                 JPanel panel = new JPanel();
                 panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
                 panel.add(Box.createVerticalStrut(20));// margines górny
 
+                //przyciski z nazwami list
                 for (String nazwaListy : nazwyList) {
-
                     JButton buttonList = new JButton(nazwaListy);
                     buttonList.setPreferredSize(new Dimension(150, 75));
                     buttonList.setMaximumSize(buttonList.getPreferredSize());
@@ -45,6 +49,7 @@ public class Lista extends GUI{
                     });
                 }
 
+                //przycisk cofnij
                 JButton cofnij_w = new JButton("<html>Cofnij</html>");
                 cofnij_w.setPreferredSize(new Dimension(150, 75));
                 cofnij_w.setMaximumSize(cofnij_w.getPreferredSize());
@@ -55,10 +60,9 @@ public class Lista extends GUI{
                     frameL.setVisible(false);
                 });
 
+                //dodanie przycisku cofnij do panelu
                 panel.add(cofnij_w);
-
                 JScrollPane scrollPane = new JScrollPane(panel);
-
                 frameL.getContentPane().add(scrollPane);
                 frameL.getContentPane().setPreferredSize(new Dimension(500, 400));
                 frameL.pack();
@@ -66,15 +70,15 @@ public class Lista extends GUI{
                 frameL.setVisible(true);
             }
             case "usun" -> {
+                //okno z pytaniem o usunięcie listy
                 JFrame frameL = new JFrame("Lista przepisów");
                 frameL.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
                 JPanel panel = new JPanel();
                 panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-
                 panel.add(Box.createVerticalStrut(20));// margines górny
 
-
+                //przyciski z nazwami list
                 for (String nazwaListy : nazwyList) {
                     JButton buttonLista = new JButton(nazwaListy);
                     buttonLista.setPreferredSize(new Dimension(150, 75));
@@ -91,6 +95,7 @@ public class Lista extends GUI{
                     });
                 }
 
+                //przycisk cofnij
                 JButton cofnij_u = new JButton("<html>Cofnij</html>");
                 cofnij_u.setPreferredSize(new Dimension(150, 75));
                 cofnij_u.setMaximumSize(cofnij_u.getPreferredSize());
@@ -101,10 +106,9 @@ public class Lista extends GUI{
                     frameL.setVisible(false);
                 });
 
+                //dodanie przycisku cofnij do panelu
                 panel.add(cofnij_u);
-
                 JScrollPane scrollPane = new JScrollPane(panel);
-
                 frameL.getContentPane().add(scrollPane);
                 frameL.getContentPane().setPreferredSize(new Dimension(500, 400));
                 frameL.pack();
@@ -112,15 +116,15 @@ public class Lista extends GUI{
                 frameL.setVisible(true);
             }
             case "zmien" -> {
+                //okno z listą przepisów
                 JFrame frameL = new JFrame("Lista przepisów");
                 frameL.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
                 JPanel panel = new JPanel();
                 panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-
                 panel.add(Box.createVerticalStrut(20));// margines górny
 
-
+                //przyciski z nazwami list
                 for (String nazwaListy : nazwyList) {
                     JButton buttonLista = new JButton(nazwaListy);
                     buttonLista.setPreferredSize(new Dimension(150, 75));
@@ -138,6 +142,7 @@ public class Lista extends GUI{
                     });
                 }
 
+                //przycisk cofnij
                 JButton cofnij_u = new JButton("<html>Cofnij</html>");
                 cofnij_u.setPreferredSize(new Dimension(150, 75));
                 cofnij_u.setMaximumSize(cofnij_u.getPreferredSize());
@@ -148,10 +153,9 @@ public class Lista extends GUI{
                     frameL.setVisible(false);
                 });
 
+                //dodanie przycisku cofnij do panelu
                 panel.add(cofnij_u);
-
                 JScrollPane scrollPane = new JScrollPane(panel);
-
                 frameL.getContentPane().add(scrollPane);
                 frameL.getContentPane().setPreferredSize(new Dimension(500, 400));
                 frameL.pack();
@@ -161,17 +165,17 @@ public class Lista extends GUI{
             case "import" -> {
                 switch (wybor) {
                     case "przepis" -> {
+                        //okno z listą przepisów
                         JFrame frameP = new JFrame("Lista przepisów");
                         frameP.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
                         JPanel panel = new JPanel();
                         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-
                         panel.add(Box.createVerticalStrut(20));// margines górny
 
 
+                        //przyciski z nazwami list
                         for (String nazwaPrzepisu : nazwyPrzepisow) {
-
                             JButton buttonPrzepis = new JButton(nazwaPrzepisu);
                             buttonPrzepis.setPreferredSize(new Dimension(150, 75));
                             buttonPrzepis.setMaximumSize(buttonPrzepis.getPreferredSize());
@@ -188,6 +192,7 @@ public class Lista extends GUI{
                             });
                         }
 
+                        //przycisk cofnij
                         JButton cofnij_w = new JButton("<html>Cofnij</html>");
                         cofnij_w.setPreferredSize(new Dimension(150, 75));
                         cofnij_w.setMaximumSize(cofnij_w.getPreferredSize());
@@ -198,10 +203,9 @@ public class Lista extends GUI{
                             frameP.setVisible(false);
                         });
 
+                        //dodanie przycisku cofnij do panelu
                         panel.add(cofnij_w);
-
                         JScrollPane scrollPane = new JScrollPane(panel);
-
                         frameP.getContentPane().add(scrollPane);
                         frameP.getContentPane().setPreferredSize(new Dimension(500, 400));
                         frameP.pack();
@@ -209,15 +213,14 @@ public class Lista extends GUI{
                         frameP.setVisible(true);
                     }
                     case "lista" -> {
+                        //okno z listą list
                         JFrame frameL = new JFrame("Lista przepisów");
                         frameL.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
                         JPanel panel = new JPanel();
                         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-
                         panel.add(Box.createVerticalStrut(20));// margines górny
 
-
+                        //przyciski z nazwami list
                         for (String nazwaListy : nazwyList) {
                             JButton buttonLista = new JButton(nazwaListy);
                             buttonLista.setPreferredSize(new Dimension(150, 75));
@@ -235,6 +238,7 @@ public class Lista extends GUI{
                             });
                         }
 
+                        //przycisk cofnij
                         JButton cofnij_u = new JButton("<html>Cofnij</html>");
                         cofnij_u.setPreferredSize(new Dimension(150, 75));
                         cofnij_u.setMaximumSize(cofnij_u.getPreferredSize());
@@ -245,10 +249,9 @@ public class Lista extends GUI{
                             frameL.setVisible(false);
                         });
 
+                        //dodanie przycisku cofnij do panelu
                         panel.add(cofnij_u);
-
                         JScrollPane scrollPane = new JScrollPane(panel);
-
                         frameL.getContentPane().add(scrollPane);
                         frameL.getContentPane().setPreferredSize(new Dimension(500, 400));
                         frameL.pack();
@@ -261,9 +264,9 @@ public class Lista extends GUI{
     }
     public void importuj(String przycisk) {
         switch (przycisk) {
-            case "dodaj"-> {
+            case "dodaj"-> {//importowanie składników przy dodawaniu listy
                 switch (wybor) {
-                    case "przepis" -> {
+                    case "przepis" -> {//importowanie składników z przepisu
                         JFrame frame = new JFrame("Importuj składniki przepisu");
                         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -288,14 +291,14 @@ public class Lista extends GUI{
                         panel.setLayout(new GridBagLayout());
 
                         GridBagConstraints GBC = new GridBagConstraints();
-                        GBC.gridx = 0; //położenie w siatce
-                        GBC.gridy = 0; //położenie w siatce
-                        GBC.gridwidth = 1; //okreslenie zajmowanych komórek
-                        GBC.gridheight = 1; //określenie zajmowanych komórek
-                        GBC.fill = GridBagConstraints.NONE; //wypełnienie przestrzenii
-                        GBC.insets = new Insets(5, 10, 5, 10); //marginesy - dostosuj do własnych preferencji
-                        GBC.anchor = GridBagConstraints.NORTHWEST; //przypiecię elementu do siatki
-                        GBC.weightx = 1; //reakcja na zmiany rozmiaru kontenera
+                        GBC.gridx = 0;
+                        GBC.gridy = 0;
+                        GBC.gridwidth = 1;
+                        GBC.gridheight = 1;
+                        GBC.fill = GridBagConstraints.NONE;
+                        GBC.insets = new Insets(5, 10, 5, 10);
+                        GBC.anchor = GridBagConstraints.NORTHWEST;
+                        GBC.weightx = 1;
                         GBC.weighty = 0;
 
                         panel.add(new JLabel("Wybrany przepis: " + wybranaNazwaPrzepisu), GBC);
@@ -313,11 +316,9 @@ public class Lista extends GUI{
                         JButton importuj = new JButton("<html>Importuj</html>");
                         importuj.addActionListener(e -> {
                             int[] wybraneSkladniki = checkList.getSelectedIndices();
-
                             for (int id : wybraneSkladniki) {
                                 importowaneSkladniki.add(model.getElementAt(id));
                             }
-
                             dodaj();
                             frame.setVisible(false);
                         });
@@ -326,14 +327,13 @@ public class Lista extends GUI{
                         frame.add(buttonPanel, BorderLayout.SOUTH);
                         buttonPanel.add(cofnij);
                         buttonPanel.add(importuj);
-
                         frame.add(panel);
                         frame.getContentPane().setPreferredSize(new Dimension(800, 550));
                         frame.pack();
                         frame.setLocationRelativeTo(null);
                         frame.setVisible(true);
                     }
-                    case "lista" ->{
+                    case "lista" ->{//importowanie składników z listy
                         JFrame frame = new JFrame("Importuj z listy");
                         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -358,20 +358,19 @@ public class Lista extends GUI{
                         panel.setLayout(new GridBagLayout());
 
                         GridBagConstraints GBC = new GridBagConstraints();
-                        GBC.gridx = 0; //położenie w siatce
-                        GBC.gridy = 0; //położenie w siatce
-                        GBC.gridwidth = 1; //okreslenie zajmowanych komórek
-                        GBC.gridheight = 1; //określenie zajmowanych komórek
-                        GBC.fill = GridBagConstraints.NONE; //wypełnienie przestrzenii
-                        GBC.insets = new Insets(5, 10, 5, 10); //marginesy - dostosuj do własnych preferencji
-                        GBC.anchor = GridBagConstraints.NORTHWEST; //przypiecię elementu do siatki
-                        GBC.weightx = 1; //reakcja na zmiany rozmiaru kontenera
+                        GBC.gridx = 0;
+                        GBC.gridy = 0;
+                        GBC.gridwidth = 1;
+                        GBC.gridheight = 1;
+                        GBC.fill = GridBagConstraints.NONE;
+                        GBC.insets = new Insets(5, 10, 5, 10);
+                        GBC.anchor = GridBagConstraints.NORTHWEST;
+                        GBC.weightx = 1;
                         GBC.weighty = 0;
 
                         panel.add(new JLabel("Wybrany przepis: " + wybranaNazwaPrzepisu), GBC);
                         GBC.gridy++;
                         panel.add(scrollPane, GBC);
-
 
                         JButton cofnij = new JButton("<html>Cofnij</html>");
                         cofnij.addActionListener(e -> {
@@ -379,15 +378,12 @@ public class Lista extends GUI{
                             frame.setVisible(false);
                         });
 
-
                         JButton importuj = new JButton("<html>Importuj</html>");
                         importuj.addActionListener(e -> {
                             int[] wybraneElementy = checkList.getSelectedIndices();
-
                             for (int id : wybraneElementy) {
                                 importowaneSkladniki.add(model.getElementAt(id));
                             }
-
                             dodaj();
                             frame.setVisible(false);
                         });
@@ -396,7 +392,6 @@ public class Lista extends GUI{
                         frame.add(buttonPanel, BorderLayout.SOUTH);
                         buttonPanel.add(cofnij);
                         buttonPanel.add(importuj);
-
                         frame.add(panel);
                         frame.getContentPane().setPreferredSize(new Dimension(800, 550));
                         frame.pack();
@@ -405,9 +400,9 @@ public class Lista extends GUI{
                     }
                 }
             }
-            case "zmien"->{
+            case "zmien"->{ //importowanie składników przy zmianie listy
                 switch (wybor) {
-                    case "przepis" -> {
+                    case "przepis" -> {//importowanie składników z przepisu
                         JFrame frame = new JFrame("Importuj składniki przepisu");
                         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -431,20 +426,19 @@ public class Lista extends GUI{
                         panel.setLayout(new GridBagLayout());
 
                         GridBagConstraints GBC = new GridBagConstraints();
-                        GBC.gridx = 0; //położenie w siatce
-                        GBC.gridy = 0; //położenie w siatce
-                        GBC.gridwidth = 1; //okreslenie zajmowanych komórek
-                        GBC.gridheight = 1; //określenie zajmowanych komórek
-                        GBC.fill = GridBagConstraints.NONE; //wypełnienie przestrzenii
-                        GBC.insets = new Insets(5, 10, 5, 10); //marginesy - dostosuj do własnych preferencji
-                        GBC.anchor = GridBagConstraints.NORTHWEST; //przypiecię elementu do siatki
-                        GBC.weightx = 1; //reakcja na zmiany rozmiaru kontenera
+                        GBC.gridx = 0;
+                        GBC.gridy = 0;
+                        GBC.gridwidth = 1;
+                        GBC.gridheight = 1;
+                        GBC.fill = GridBagConstraints.NONE;
+                        GBC.insets = new Insets(5, 10, 5, 10);
+                        GBC.anchor = GridBagConstraints.NORTHWEST;
+                        GBC.weightx = 1;
                         GBC.weighty = 0;
 
                         panel.add(new JLabel("Wybrany przepis: " + wybranaNazwaPrzepisu), GBC);
                         GBC.gridy++;
                         panel.add(scrollPane, GBC);
-
 
                         JButton cofnij = new JButton("<html>Cofnij</html>");
                         cofnij.addActionListener(e -> {
@@ -452,15 +446,12 @@ public class Lista extends GUI{
                             frame.setVisible(false);
                         });
 
-
                         JButton importuj = new JButton("<html>Importuj</html>");
                         importuj.addActionListener(e -> {
                             int[] wybraneSkladniki = checkList.getSelectedIndices();
-
                             for (int id : wybraneSkladniki) {
                                     importowaneSkladniki.add(model.getElementAt(id));
                             }
-
                             zmien();
                             frame.setVisible(false);
                         });
@@ -469,14 +460,13 @@ public class Lista extends GUI{
                         frame.add(buttonPanel, BorderLayout.SOUTH);
                         buttonPanel.add(cofnij);
                         buttonPanel.add(importuj);
-
                         frame.add(panel);
                         frame.getContentPane().setPreferredSize(new Dimension(800, 550));
                         frame.pack();
                         frame.setLocationRelativeTo(null);
                         frame.setVisible(true);
                     }
-                    case "lista" ->{
+                    case "lista" ->{//importowanie składników z listy
                         JFrame frame = new JFrame("Importuj z listy");
                         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -514,18 +504,15 @@ public class Lista extends GUI{
                         GBC.gridy++;
                         panel.add(scrollPane, GBC);
 
-
                         JButton cofnij = new JButton("<html>Cofnij</html>");
                         cofnij.addActionListener(e -> {
                             zmien();
                             frame.setVisible(false);
                         });
 
-
                         JButton importuj = new JButton("<html>Importuj</html>");
                         importuj.addActionListener(e -> {
                             int[] wybraneElementy = checkList.getSelectedIndices();
-
                             for (int id : wybraneElementy) {
                                     importowaneSkladniki.add(model.getElementAt(id));
                             }
@@ -537,7 +524,6 @@ public class Lista extends GUI{
                         frame.add(buttonPanel, BorderLayout.SOUTH);
                         buttonPanel.add(cofnij);
                         buttonPanel.add(importuj);
-
                         frame.add(panel);
                         frame.getContentPane().setPreferredSize(new Dimension(800, 550));
                         frame.pack();
@@ -549,7 +535,8 @@ public class Lista extends GUI{
         }
     }
     public void calosc() {
-        JFrame frameC = new JFrame("Szczegóły przepisu " + wybranaNazwaListy);
+        //okno z całą listą
+        JFrame frameC = new JFrame("Szczegóły listy " + wybranaNazwaListy);
         frameC.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         String tresc = MySql.SelectT(wybranaNazwaListy);
@@ -560,7 +547,7 @@ public class Lista extends GUI{
             frameC.setVisible(false);
         });
 
-
+        //wyświetlenie treści listy
         JTextArea trescTextArea = new JTextArea(tresc);
         trescTextArea.setWrapStyleWord(true);
         trescTextArea.setLineWrap(true);
@@ -571,19 +558,20 @@ public class Lista extends GUI{
         scrollTTA.setMinimumSize(scrollTTA.getPreferredSize());
         scrollTTA.setMaximumSize(scrollTTA.getPreferredSize());
 
+        //panel z elementami
         JPanel skladnikiPanel = new JPanel(new GridBagLayout());
-        GridBagConstraints GBC = new GridBagConstraints();
+        GridBagConstraints GBC = new GridBagConstraints();//określenie położenia elementów w panelu
+        GBC.gridx = 0;
+        GBC.gridy = 0;
+        GBC.gridwidth = 2;
+        GBC.gridheight = 1;
+        GBC.fill = GridBagConstraints.HORIZONTAL;
+        GBC.insets = new Insets(5, 10, 5, 10);
+        GBC.anchor = GridBagConstraints.WEST;
+        GBC.weightx = 1;
+        GBC.weighty = 0;
 
-        GBC.gridx = 0; //położenie w siatce
-        GBC.gridy = 0; //położenie w siatce
-        GBC.gridwidth = 2; //okreslenie zajmowanych komórek
-        GBC.gridheight = 1; //określenie zajmowanych komórek
-        GBC.fill = GridBagConstraints.HORIZONTAL; //wypełnienie przestrzenii
-        GBC.insets = new Insets(5, 10, 5, 10); //marginesy - dostosuj do własnych preferencji
-        GBC.anchor = GridBagConstraints.WEST; //przypiecię elementu do siatki
-        GBC.weightx = 1; //reakcja na zmiany rozmiaru kontenera
-        GBC.weighty = 0; //zmieniamy na 0, aby tekst nie rozciągał wertykalnie
-
+        //dodanie elementów do panelu
         skladnikiPanel.add(new JLabel("Nazwa listy: " + wybranaNazwaListy), GBC);
         GBC.gridy++;
         skladnikiPanel.add(new JLabel("Treść:"), GBC);
@@ -603,10 +591,11 @@ public class Lista extends GUI{
         frameC.setLocationRelativeTo(null);
         frameC.setVisible(true);
     }
-    public void usun() {
+    public void usun() {//metoda do usuwania listy
         JFrame frameU = new JFrame();
         frameU.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
+        //okno z pytaniem o usunięcie listy
         JLabel labelU = new JLabel("Czy na pewno chcesz usunąć tą listę: ");
         JButton buttonP1 = new JButton("<html>Tak</html>");
         buttonP1.setBounds(40, 50, 85, 65);
@@ -618,12 +607,12 @@ public class Lista extends GUI{
         labelU.setBounds(30, 10, 260, 30);
 
         frameU.getContentPane().add(buttonP1);
-        buttonP1.addActionListener(e -> {
+        buttonP1.addActionListener(e -> {//usunięcie listy
             MySql.DeleteL(wybranaNazwaListy);
             frameU.setVisible(false);
         });
         frameU.getContentPane().add(buttonP2);
-        buttonP2.addActionListener(e -> {
+        buttonP2.addActionListener(e -> {//powrót do listy list
             wyswietl("usun");
             frameU.setVisible(false);
         });
@@ -633,22 +622,23 @@ public class Lista extends GUI{
         frameU.setLocationRelativeTo(null);
         frameU.setVisible(true);
     }
-    public void zmien() {
+    public void zmien() {//metoda do zmiany listy
         JFrame frame = new JFrame("Edytuj Listę");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         String tresc = MySql.SelectT(wybranaNazwaListy);
 
+        //okno z edycją listy
         JTextField nazwaTF = new JTextField(35);
         nazwaTF.setText(wybranaNazwaListy);
 
+        //wyświetlenie treści listy
         trescL = new JTextArea(55, 150);
         trescL.append(tresc);
         trescL.setWrapStyleWord(true);
         trescL.setLineWrap(true);
         trescL.setOpaque(true);
         trescL.setEditable(true);
-
 
         for (Object skladnik : importowaneSkladniki) {
             trescL.append(skladnik + "\n");
@@ -666,8 +656,6 @@ public class Lista extends GUI{
             frame.setVisible(false);
         });
 
-
-
         JButton edytuj = new JButton("<html>Edytuj</html>");
         edytuj.addActionListener( e -> {
             String nazwaL = nazwaTF.getText();
@@ -675,13 +663,14 @@ public class Lista extends GUI{
             if(nazwaL.isEmpty() || tresclisty.isEmpty()){
                 JOptionPane.showMessageDialog(null, "Wszystkie pola muszą zawierać treść ", "Informacja", JOptionPane.INFORMATION_MESSAGE);
                 frame.setVisible(false);
-            }else {
+            }else {//zmiana listy
                 UpdateLista(wybranaNazwaListy, nazwaL, tresclisty);
                 importowaneSkladniki.clear();
                 frame.setVisible(false);
             }
         });
 
+        //importowanie składników z przepisu lub listy
         JButton importujSklad = new JButton("<html>Importuj składniki<br> z przepisu</html>");
         importujSklad.addActionListener(e -> {
             wybierzListedoImportu("zmien");
@@ -722,23 +711,25 @@ public class Lista extends GUI{
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
-    private void UpdateLista(String wybranaNazwaListy, String nazwaL, String trescL) {
+    private void UpdateLista(String wybranaNazwaListy, String nazwaL, String trescL) {//metoda do zmiany listy
         MySql.updateL(wybranaNazwaListy, nazwaL, trescL);
         GUI.wyswietlGUI();
     }
-    public void dodaj() {
+    public void dodaj() {//metoda do dodawania listy
         JFrame frameL = new JFrame("Dodaj listę");
         frameL.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frameL.getContentPane().setPreferredSize(new Dimension(800, 550));
 
         JTextField nazwaL =  new JTextField(15);
 
+        //okno z dodawaniem listy
         trescL = new JTextArea(55, 150);
         trescL.setWrapStyleWord(true);
         trescL.setLineWrap(true);
         trescL.setOpaque(true);
         trescL.setEditable(true);
 
+        //dodanie importowanych składników
         for (Object skladnik : importowaneSkladniki) {
             trescL.append(skladnik + "\n");
         }
@@ -758,33 +749,33 @@ public class Lista extends GUI{
                 JOptionPane.showMessageDialog(null, "Wszystkie pola muszą zawierać treść", "Informacja", JOptionPane.INFORMATION_MESSAGE);
                 dodaj();
                 frameL.setVisible(false);
-            } else {
+            } else {//dodanie listy
                 wpiszListę(nazwa, tresc);
                 importowaneSkladniki.clear();
                 frameL.setVisible(false);
             }
         });
 
+        //importowanie składników z przepisu lub listy
         JButton importujSklad = new JButton("<html>Importuj składniki<br> z przepisu</html>");
         importujSklad.addActionListener(e -> {
             wybierzListedoImportu("dodaj");
             frameL.setVisible(false);
         });
 
+        //panel z elementami
         JPanel panel = new JPanel(new GridBagLayout());
         frameL.add(panel);
-
         JScrollPane scrollPane = new JScrollPane(trescL);
-
-        GridBagConstraints GBC = new GridBagConstraints();
-        GBC.gridx = 0; // położenie w siatce
-        GBC.gridy = 0; // położenie w siatce
-        GBC.gridwidth = 1; // określenie zajmowanych komórek
-        GBC.gridheight = 1; // określenie zajmowanych komórek
-        GBC.fill = GridBagConstraints.HORIZONTAL; // wypełnienie przestrzeni
-        GBC.insets = new Insets(5, 10, 5, 10); // marginesy - dostosuj do własnych preferencji
-        GBC.anchor = GridBagConstraints.WEST; // przypięcie elementu do siatki
-        GBC.weightx = 1; // reakcja na zmiany rozmiaru kontenera
+        GridBagConstraints GBC = new GridBagConstraints();//określenie położenia elementów w panelu
+        GBC.gridx = 0;
+        GBC.gridy = 0;
+        GBC.gridwidth = 1;
+        GBC.gridheight = 1;
+        GBC.fill = GridBagConstraints.HORIZONTAL;
+        GBC.insets = new Insets(5, 10, 5, 10);
+        GBC.anchor = GridBagConstraints.WEST;
+        GBC.weightx = 1;
         GBC.weighty = 0;
 
         panel.add(new JLabel("Dodaj nazwę listy"), GBC);
@@ -812,7 +803,7 @@ public class Lista extends GUI{
     }
     public void wybierzListedoImportu(String przycisk){
         switch (przycisk) {
-            case "dodaj" -> {
+            case "dodaj" -> {//importowanie składników przy dodawaniu listy
                 JFrame frameU = new JFrame();
                 frameU.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -847,7 +838,7 @@ public class Lista extends GUI{
                 frameU.setLocationRelativeTo(null);
                 frameU.setVisible(true);
             }
-            case "zmien" -> {
+            case "zmien" -> {//importowanie składników przy zmianie listy
                 JFrame frameU = new JFrame();
                 frameU.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -883,7 +874,7 @@ public class Lista extends GUI{
             }
         }
     }
-    static public void wpiszListę(String Wnazwa, String Wtresc){
+    static public void wpiszListę(String Wnazwa, String Wtresc){//metoda do dodawania listy
         MySql.insertL(Wnazwa, Wtresc);
         GUI.wyswietlGUI();
     }
