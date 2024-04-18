@@ -34,13 +34,8 @@ public class Main {
             UIManager.put("TextField.background", Color.decode("#F1F1F2"));
             UIManager.put("TextField.foreground", Color.black);
 
-        } catch (UnsupportedLookAndFeelException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (InstantiationException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                 IllegalAccessException e) {
             throw new RuntimeException(e);
         }
         GUI.wyswietlGUI();
