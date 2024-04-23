@@ -500,7 +500,7 @@ public class Lista extends GUI{
                         GBC.weightx = 1; //reakcja na zmiany rozmiaru kontenera
                         GBC.weighty = 0;
 
-                        panel.add(new JLabel("Wybrany przepis: " + wybranaNazwaListy), GBC);
+                        panel.add(new JLabel("Wybrana lista: " + wybranaNazwaListy), GBC);
                         GBC.gridy++;
                         panel.add(scrollPane, GBC);
 
