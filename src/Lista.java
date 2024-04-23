@@ -368,7 +368,7 @@ public class Lista extends GUI{
                         GBC.weightx = 1;
                         GBC.weighty = 0;
 
-                        panel.add(new JLabel("Wybrany przepis: " + wybranaNazwaPrzepisu), GBC);
+                        panel.add(new JLabel("Wybrana lista: " + wybranaNazwaListy), GBC);
                         GBC.gridy++;
                         panel.add(scrollPane, GBC);
 
@@ -671,7 +671,7 @@ public class Lista extends GUI{
         });
 
         //importowanie składników z przepisu lub listy
-        JButton importujSklad = new JButton("<html>Importuj składniki<br> z przepisu</html>");
+        JButton importujSklad = new JButton("<html>Importuj</html>");
         importujSklad.addActionListener(e -> {
             wybierzListedoImportu("zmien");
             frame.setVisible(false);
@@ -757,7 +757,7 @@ public class Lista extends GUI{
         });
 
         //importowanie składników z przepisu lub listy
-        JButton importujSklad = new JButton("<html>Importuj składniki<br> z przepisu</html>");
+        JButton importujSklad = new JButton("<html>Importuj</html>");
         importujSklad.addActionListener(e -> {
             wybierzListedoImportu("dodaj");
             frameL.setVisible(false);
